@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/flowbite@1.4.2/dist/flowbite.min.css">
+    <script src="https://unpkg.com/flowbite@1.4.2/dist/flowbite.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/styles/default.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/highlight.min.js"></script>
+    <link rel="stylesheet" href="css/notify.css">
+    <script src="js/notify.min.js"></script>
+    <script src="js/notify-metro.js"></script>
+    <script defer src="js/index.js"></script>
+    <title>Remote CodingClub</title>
+</head>
+
+<body class="p-5 bg-gray-100">
+    <h1 class="text-3xl">Cobra Admin Panel</h1>
+    <div class="py-10 px-2">
+        <div class="max-w-md mx-auto overflow-hidden md:max-w-lg">
+            <div class="md:flex">
+                <div class="w-full p-4">
+                    <ul id="user_list">
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="userfiles" style="display: none;" class="bg-gray-50 rounded-lg border border-gray-200">
+        <div class="flex justify-between">
+            <nav class="flex py-1 px-5 text-gray-700" aria-label="Breadcrumb">
+                <ol id="breadcrumb" class="inline-flex items-center space-x-1 md:space-x-3">
+                </ol>
+            </nav>
+            <button class="bg-blue-500 hover:bg-blue-700 text-sm text-white font-bold py-2 px-4 m-2 rounded-full">
+                Mouli
+            </button>
+        </div>
+        <ul class="m-3" id="files">
+        </ul>
+    </div>
+    <div id="codeModal" tabindex="-1" aria-hidden="true"
+        class="hidden overflow-y-auto overflow-x-hidden fixed flex justify-center items-center top-0 right-0 left-0 z-50 w-full h-screen">
+        <div class="relative p-4 w-full max-w-6xl">
+            <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
+                <div class="flex justify-between items-start p-5 rounded-t border-b dark:border-gray-600">
+                    <h3 class="text-xl font-semibold text-gray-900 lg:text-2xl dark:text-white">
+                    </h3>
+                    <button type="button"
+                        class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-600 dark:hover:text-white">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd"
+                                d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                                clip-rule="evenodd"></path>
+                        </svg>
+                    </button>
+                </div>
+                <pre style="max-height: calc(100vh - 200px);" class="m-3 overflow-scroll"><code></code></pre>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

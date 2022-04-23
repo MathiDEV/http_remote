@@ -1,0 +1,26 @@
+.notifyjs-metro-base {
+    position: relative;
+    color: #444;
+    width: fit-content;
+    border-radius: 10px;
+}
+.notifyjs-metro-base .text-wrapper {
+    display: inline-block;
+    vertical-align: top;
+    text-align: center;
+    clear: both;
+    font-family: 'Segoe UI';
+    margin: 7px 15px;
+}
+
+.notifyjs-metro-base .title {
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.notifyjs-corner {
+    top: 0;
+    left: 50%;
+    width: fit-content;
+    transform: translateX(-50%);
+}
