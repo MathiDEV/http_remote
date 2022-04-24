@@ -36,15 +36,15 @@ if (is_dir($runner)) {
     exec("rm -rf $runner");
 }
 mkdir($runner);
+chmod($runner, 0777);
 
 $allowed_exts = file_get_contents("mouli/.allowed");
 $allowed_exts = explode("\n", $allowed_exts);
-
 foreach ($response as $path => $content) {
     $dirs = explode("/", $path);
     $filename = array_pop($dirs);
     $ext = pathinfo($filename, PATHINFO_EXTENSION);
-    if (!in_array($ext, $allowed_exts)) {
+    if (in_array($ext, $allowed_exts) || $path == "") {
         continue;
     }
     $dir_path = $runner;
