@@ -1,0 +1,1765 @@
+## Start of test suite
+$> ./lem_in < maps/nb_ant
+KO (invalid map parsing)
+# Expected (after pre-processing):
+ANTS:20
+# But got (after pre-processing):
+# Student output was:
+## Start of test suite
+$> ./lem_in < maps/rooms
+# OK
+## Test suite OK
+
+## Start of test suite
+$> ./lem_in < maps/pipes
+KO (invalid map parsing)
+# Expected (after pre-processing):
+PIPE:0-10
+PIPE:0-11
+PIPE:0-12
+PIPE:0-15
+PIPE:0-16
+PIPE:0-19
+PIPE:0-7
+PIPE:1-10
+PIPE:1-14
+PIPE:1-17
+PIPE:1-19
+PIPE:1-5
+PIPE:1-9
+PIPE:10-0
+PIPE:10-1
+PIPE:10-11
+PIPE:10-12
+PIPE:10-15
+PIPE:10-16
+PIPE:10-17
+PIPE:10-19
+PIPE:10-4
+PIPE:10-5
+PIPE:11-0
+PIPE:11-10
+PIPE:11-16
+PIPE:11-17
+PIPE:11-9
+PIPE:12-0
+PIPE:12-10
+PIPE:12-14
+PIPE:12-15
+PIPE:12-3
+PIPE:12-4
+PIPE:12-6
+PIPE:12-8
+PIPE:13-14
+PIPE:13-19
+PIPE:13-5
+PIPE:13-6
+PIPE:13-8
+PIPE:14-1
+PIPE:14-12
+PIPE:14-13
+PIPE:14-14
+PIPE:14-16
+PIPE:14-5
+PIPE:14-7
+PIPE:14-9
+PIPE:15-0
+PIPE:15-10
+PIPE:15-12
+PIPE:15-17
+PIPE:15-19
+PIPE:15-8
+PIPE:16-0
+PIPE:16-10
+PIPE:16-11
+PIPE:16-14
+PIPE:16-3
+PIPE:16-4
+PIPE:16-7
+PIPE:17-1
+PIPE:17-10
+PIPE:17-11
+PIPE:17-15
+PIPE:17-4
+PIPE:17-6
+PIPE:17-7
+PIPE:18-2
+PIPE:18-9
+PIPE:19-0
+PIPE:19-1
+PIPE:19-10
+PIPE:19-13
+PIPE:19-15
+PIPE:19-2
+PIPE:19-3
+PIPE:19-5
+PIPE:19-8
+PIPE:2-18
+PIPE:2-19
+PIPE:2-4
+PIPE:3-12
+PIPE:3-16
+PIPE:3-19
+PIPE:3-3
+PIPE:3-6
+PIPE:3-8
+PIPE:3-9
+PIPE:4-10
+PIPE:4-12
+PIPE:4-16
+PIPE:4-17
+PIPE:4-2
+PIPE:4-7
+PIPE:4-8
+PIPE:4-9
+PIPE:5-1
+PIPE:5-10
+PIPE:5-13
+PIPE:5-14
+PIPE:5-19
+PIPE:5-6
+PIPE:5-8
+PIPE:6-12
+PIPE:6-13
+PIPE:6-17
+PIPE:6-3
+PIPE:6-5
+PIPE:6-7
+PIPE:7-0
+PIPE:7-14
+PIPE:7-16
+PIPE:7-17
+PIPE:7-4
+PIPE:7-6
+PIPE:8-12
+PIPE:8-13
+PIPE:8-15
+PIPE:8-19
+PIPE:8-3
+PIPE:8-4
+PIPE:8-5
+PIPE:9-1
+PIPE:9-11
+PIPE:9-14
+PIPE:9-18
+PIPE:9-3
+PIPE:9-4
+# But got (after pre-processing):
+PIPE:0-10
+PIPE:0-11
+PIPE:0-12
+PIPE:0-15
+PIPE:0-16
+PIPE:0-19
+PIPE:0-7
+PIPE:1-10
+PIPE:1-14
+PIPE:1-17
+PIPE:1-19
+PIPE:1-5
+PIPE:1-9
+PIPE:10-0
+PIPE:10-1
+PIPE:10-11
+PIPE:10-12
+PIPE:10-15
+PIPE:10-16
+PIPE:10-17
+PIPE:10-19
+PIPE:10-4
+PIPE:10-5
+PIPE:11-0
+PIPE:11-10
+PIPE:11-16
+PIPE:11-17
+PIPE:11-9
+PIPE:12-0
+PIPE:12-10
+PIPE:12-14
+PIPE:12-15
+PIPE:12-3
+PIPE:12-4
+PIPE:12-6
+PIPE:12-8
+PIPE:13-14
+PIPE:13-19
+PIPE:13-5
+PIPE:13-6
+PIPE:13-8
+PIPE:14-1
+PIPE:14-12
+PIPE:14-13
+PIPE:14-16
+PIPE:14-5
+PIPE:14-7
+PIPE:14-9
+PIPE:15-0
+PIPE:15-10
+PIPE:15-12
+PIPE:15-17
+PIPE:15-19
+PIPE:15-8
+PIPE:16-0
+PIPE:16-10
+PIPE:16-11
+PIPE:16-14
+PIPE:16-3
+PIPE:16-4
+PIPE:16-7
+PIPE:17-1
+PIPE:17-10
+PIPE:17-11
+PIPE:17-15
+PIPE:17-4
+PIPE:17-6
+PIPE:17-7
+PIPE:18-2
+PIPE:18-9
+PIPE:19-0
+PIPE:19-1
+PIPE:19-10
+PIPE:19-13
+PIPE:19-15
+PIPE:19-2
+PIPE:19-3
+PIPE:19-5
+PIPE:19-8
+PIPE:2-18
+PIPE:2-19
+PIPE:2-4
+PIPE:3-12
+PIPE:3-16
+PIPE:3-19
+PIPE:3-6
+PIPE:3-8
+PIPE:3-9
+PIPE:4-10
+PIPE:4-12
+PIPE:4-16
+PIPE:4-17
+PIPE:4-2
+PIPE:4-7
+PIPE:4-8
+PIPE:4-9
+PIPE:5-1
+PIPE:5-10
+PIPE:5-13
+PIPE:5-14
+PIPE:5-19
+PIPE:5-6
+PIPE:5-8
+PIPE:6-12
+PIPE:6-13
+PIPE:6-17
+PIPE:6-3
+PIPE:6-5
+PIPE:6-7
+PIPE:7-0
+PIPE:7-14
+PIPE:7-16
+PIPE:7-17
+PIPE:7-4
+PIPE:7-6
+PIPE:8-12
+PIPE:8-13
+PIPE:8-15
+PIPE:8-19
+PIPE:8-3
+PIPE:8-4
+PIPE:8-5
+PIPE:9-1
+PIPE:9-11
+PIPE:9-14
+PIPE:9-18
+PIPE:9-3
+PIPE:9-4
+# Student output was:
+#number_of_ants
+20
+#rooms
+0 66 19
+1 33 199
+2 57 153
+3 189 70
+4 165 124
+5 169 176
+6 28 24
+7 51 74
+8 138 187
+9 74 166
+10 132 145
+11 132 43
+12 13 107
+13 58 28
+14 113 44
+##start
+15 3 33
+16 89 105
+17 99 88
+##end
+18 113 39
+19 187 193
+#tunnels
+0-7
+0-11
+0-16
+0-19
+1-5
+1-9
+1-14
+1-17
+1-19
+2-19
+3-6
+3-9
+3-12
+3-19
+4-2
+4-8
+4-16
+4-17
+5-6
+5-13
+5-14
+6-12
+6-13
+6-17
+7-4
+7-6
+7-14
+7-16
+7-17
+8-3
+8-5
+8-12
+8-19
+9-4
+9-14
+9-18
+10-0
+10-1
+10-4
+10-5
+10-15
+10-16
+10-17
+10-19
+11-9
+11-10
+11-16
+12-0
+12-4
+12-10
+12-14
+12-15
+13-8
+13-14
+15-0
+15-8
+15-17
+16-3
+16-14
+17-11
+18-2
+19-5
+19-13
+19-15
+#moves
+P1-10 P2-19
+P1-1 P2-2 P3-10 P4-19
+P1-9 P2-18 P3-1 P4-2 P5-10 P6-19
+P1-18 P3-9 P4-18 P5-1 P6-2 P7-10 P8-19
+P3-18 P5-9 P6-18 P7-1 P8-2 P9-10 P10-19
+P5-18 P7-9 P8-18 P9-1 P10-2 P11-10 P12-19
+P7-18 P9-9 P10-18 P11-1 P12-2 P13-10 P14-19
+P9-18 P11-9 P12-18 P13-1 P14-2 P15-10 P16-19
+P11-18 P13-9 P14-18 P15-1 P16-2 P17-10 P18-19
+P13-18 P15-9 P16-18 P17-1 P18-2 P19-10 P20-19
+P15-18 P17-9 P18-18 P19-1 P20-2
+P17-18 P19-9 P20-18
+P19-18
+## Start of test suite
+$> ./lem_in < maps/end_start
+# OK
+$> ./lem_in < maps/end_start_bis
+# OK
+## Test suite OK
+
+## Start of test suite
+$> ./lem_in < maps/comment_1
+KO (invalid map parsing)
+# Expected (after pre-processing):
+ANTS:5
+START:2
+END:4
+SALLE:0
+SALLE:1
+SALLE:2
+SALLE:3
+SALLE:4
+PIPE:2-4
+PIPE:4-2
+COORDINATE:0 13 14
+COORDINATE:1 19 40
+COORDINATE:2 33 29
+COORDINATE:3 46 1
+COORDINATE:4 17 16
+# But got (after pre-processing):
+ANTS:5
+START:
+END:
+SALLE:5
+COORDINATE:5 13 14
+# Student output was:
+#number_of_ants
+5
+#rooms
+5 13 14
+0 13 14
+1 19 40
+##start
+2 33 29
+3 46 1
+##end
+4 17 16
+#tunnels
+4-2
+#moves
+P1-4
+P2-4
+P3-4
+P4-4
+P5-4
+## Start of test suite
+$> ./lem_in < maps/comment_2
+# OK
+## Test suite OK
+
+## Start of test suite
+$> ./lem_in < maps/comment_3
+# OK
+## Test suite OK
+
+## Start of test suite
+$> ./lem_in < maps/comment_4
+# OK
+## Test suite OK
+
+## Start of test suite
+$> ./lem_in < maps/comment_5
+# OK
+## Test suite OK
+
+## Start of test suite
+$> ./lem_in < maps/comment_6
+# OK
+## Test suite OK
+
+## Start of test suite
+$> ./lem_in < maps/comment_7
+# OK
+## Test suite OK
+
+## Start of test suite
+$> ./lem_in < maps/full_map
+KO (invalid map parsing)
+# Expected (after pre-processing):
+ANTS:27
+START:8
+END:16
+SALLE:0
+SALLE:1
+SALLE:10
+SALLE:11
+SALLE:12
+SALLE:13
+SALLE:14
+SALLE:15
+SALLE:16
+SALLE:17
+SALLE:18
+SALLE:19
+SALLE:2
+SALLE:3
+SALLE:4
+SALLE:5
+SALLE:6
+SALLE:7
+SALLE:8
+SALLE:9
+PIPE:0-0
+PIPE:0-19
+PIPE:0-4
+PIPE:1-10
+PIPE:1-19
+PIPE:1-6
+PIPE:1-9
+PIPE:10-1
+PIPE:10-13
+PIPE:10-15
+PIPE:12-12
+PIPE:12-17
+PIPE:12-19
+PIPE:12-2
+PIPE:13-10
+PIPE:13-5
+PIPE:15-10
+PIPE:15-8
+PIPE:17-12
+PIPE:17-9
+PIPE:18-3
+PIPE:18-6
+PIPE:19-0
+PIPE:19-1
+PIPE:19-12
+PIPE:2-12
+PIPE:3-18
+PIPE:4-0
+PIPE:5-13
+PIPE:5-6
+PIPE:5-8
+PIPE:6-1
+PIPE:6-18
+PIPE:6-5
+PIPE:8-15
+PIPE:8-5
+PIPE:9-1
+PIPE:9-17
+COORDINATE:0 25 8
+COORDINATE:1 29 122
+COORDINATE:10 195 103
+COORDINATE:11 82 46
+COORDINATE:12 111 22
+COORDINATE:13 191 154
+COORDINATE:14 17 117
+COORDINATE:15 74 164
+COORDINATE:16 109 7
+COORDINATE:17 24 69
+COORDINATE:18 175 70
+COORDINATE:19 69 170
+COORDINATE:2 46 187
+COORDINATE:3 112 33
+COORDINATE:4 190 190
+COORDINATE:5 124 77
+COORDINATE:6 172 73
+COORDINATE:7 45 179
+COORDINATE:8 34 123
+COORDINATE:9 42 114
+# But got (after pre-processing):
+ANTS:27
+START:8
+END:16
+SALLE:0
+SALLE:1
+SALLE:10
+SALLE:11
+SALLE:12
+SALLE:13
+SALLE:14
+SALLE:15
+SALLE:16
+SALLE:17
+SALLE:18
+SALLE:19
+SALLE:2
+SALLE:3
+SALLE:4
+SALLE:5
+SALLE:6
+SALLE:7
+SALLE:8
+SALLE:9
+PIPE:0-19
+PIPE:0-4
+PIPE:1-10
+PIPE:1-19
+PIPE:1-6
+PIPE:1-9
+PIPE:10-1
+PIPE:10-13
+PIPE:10-15
+PIPE:12-17
+PIPE:12-19
+PIPE:12-2
+PIPE:13-10
+PIPE:13-5
+PIPE:15-10
+PIPE:15-8
+PIPE:17-12
+PIPE:17-9
+PIPE:18-3
+PIPE:18-6
+PIPE:19-0
+PIPE:19-1
+PIPE:19-12
+PIPE:2-12
+PIPE:3-18
+PIPE:4-0
+PIPE:5-13
+PIPE:5-6
+PIPE:5-8
+PIPE:6-1
+PIPE:6-18
+PIPE:6-5
+PIPE:8-15
+PIPE:8-5
+PIPE:9-1
+PIPE:9-17
+COORDINATE:0 25 8
+COORDINATE:1 29 122
+COORDINATE:10 195 103
+COORDINATE:11 82 46
+COORDINATE:12 111 22
+COORDINATE:13 191 154
+COORDINATE:14 17 117
+COORDINATE:15 74 164
+COORDINATE:16 109 7
+COORDINATE:17 24 69
+COORDINATE:18 175 70
+COORDINATE:19 69 170
+COORDINATE:2 46 187
+COORDINATE:3 112 33
+COORDINATE:4 190 190
+COORDINATE:5 124 77
+COORDINATE:6 172 73
+COORDINATE:7 45 179
+COORDINATE:8 34 123
+COORDINATE:9 42 114
+# Student output was:
+#number_of_ants
+27
+#rooms
+0 25 8
+1 29 122
+2 46 187
+3 112 33
+4 190 190
+5 124 77
+6 172 73
+7 45 179
+##start
+8 34 123
+9 42 114
+10 195 103
+11 82 46
+12 111 22
+13 191 154
+14 17 117
+15 74 164
+##end
+16 109 7
+17 24 69
+18 175 70
+19 69 170
+#tunnels
+0-19
+1-19
+2-12
+3-18
+4-0
+5-13
+6-1
+6-5
+6-18
+8-5
+8-15
+9-1
+10-1
+10-15
+12-17
+13-10
+17-9
+19-12
+#moves
+## Start of test suite
+$> ./lem_in < maps/direct_link
+# OK
+## Test suite OK
+
+## Start of test suite
+$> ./lem_in < maps/direct_link_bis
+KO (invalid map parsing)
+Expected:
+ANTS:10
+START:0
+END:3
+SALLE:0
+SALLE:1
+SALLE:2
+SALLE:3
+SALLE:4
+SALLE:5
+SALLE:6
+SALLE:7
+SALLE:8
+SALLE:9
+PIPE:0-3
+PIPE:0-9
+PIPE:1-1
+PIPE:1-2
+PIPE:1-4
+PIPE:1-7
+PIPE:1-9
+PIPE:2-1
+PIPE:3-0
+PIPE:3-5
+PIPE:3-9
+PIPE:4-1
+PIPE:4-5
+PIPE:5-3
+PIPE:5-4
+PIPE:5-6
+PIPE:5-7
+PIPE:5-8
+PIPE:6-5
+PIPE:7-1
+PIPE:7-5
+PIPE:7-8
+PIPE:7-9
+PIPE:8-5
+PIPE:8-7
+PIPE:8-9
+PIPE:9-0
+PIPE:9-1
+PIPE:9-3
+PIPE:9-7
+PIPE:9-8
+PIPE:9-9
+COORDINATE:0 7 65
+COORDINATE:1 95 92
+COORDINATE:2 85 46
+COORDINATE:3 12 1
+COORDINATE:4 42 85
+COORDINATE:5 1 16
+COORDINATE:6 76 72
+COORDINATE:7 4 53
+COORDINATE:8 5 60
+COORDINATE:9 47 19
+But got:
+ANTS:10
+START:0
+END:3
+SALLE:0
+SALLE:1
+SALLE:2
+SALLE:3
+SALLE:4
+SALLE:5
+SALLE:6
+SALLE:7
+SALLE:8
+SALLE:9
+PIPE:0-3
+PIPE:0-9
+PIPE:1-2
+PIPE:1-4
+PIPE:1-7
+PIPE:1-9
+PIPE:2-1
+PIPE:3-0
+PIPE:3-5
+PIPE:3-9
+PIPE:4-1
+PIPE:4-5
+PIPE:5-3
+PIPE:5-4
+PIPE:5-6
+PIPE:5-7
+PIPE:5-8
+PIPE:6-5
+PIPE:7-1
+PIPE:7-5
+PIPE:7-8
+PIPE:7-9
+PIPE:8-5
+PIPE:8-7
+PIPE:8-9
+PIPE:9-0
+PIPE:9-1
+PIPE:9-3
+PIPE:9-7
+PIPE:9-8
+COORDINATE:0 7 65
+COORDINATE:1 95 92
+COORDINATE:2 85 46
+COORDINATE:3 12 1
+COORDINATE:4 42 85
+COORDINATE:5 1 16
+COORDINATE:6 76 72
+COORDINATE:7 4 53
+COORDINATE:8 5 60
+COORDINATE:9 47 19
+## Start of test suite
+$> ./lem_in < maps/almost_direct_link
+# OK
+$> ./lem_in < maps/almost_direct_link_bis
+KO (invalid map parsing)
+Expected:
+ANTS:10
+START:0
+END:3
+SALLE:0
+SALLE:1
+SALLE:2
+SALLE:3
+SALLE:4
+SALLE:5
+SALLE:6
+SALLE:7
+SALLE:8
+SALLE:9
+PIPE:0-1
+PIPE:0-9
+PIPE:1-0
+PIPE:1-1
+PIPE:1-2
+PIPE:1-3
+PIPE:1-4
+PIPE:1-7
+PIPE:1-9
+PIPE:2-1
+PIPE:3-1
+PIPE:3-5
+PIPE:3-9
+PIPE:4-1
+PIPE:4-5
+PIPE:5-3
+PIPE:5-4
+PIPE:5-6
+PIPE:5-7
+PIPE:5-8
+PIPE:6-5
+PIPE:7-1
+PIPE:7-5
+PIPE:7-8
+PIPE:7-9
+PIPE:8-5
+PIPE:8-7
+PIPE:8-9
+PIPE:9-0
+PIPE:9-1
+PIPE:9-3
+PIPE:9-7
+PIPE:9-8
+PIPE:9-9
+COORDINATE:0 7 65
+COORDINATE:1 95 92
+COORDINATE:2 85 46
+COORDINATE:3 12 1
+COORDINATE:4 42 85
+COORDINATE:5 1 16
+COORDINATE:6 76 72
+COORDINATE:7 4 53
+COORDINATE:8 5 60
+COORDINATE:9 47 19
+But got:
+ANTS:10
+START:0
+END:3
+SALLE:0
+SALLE:1
+SALLE:2
+SALLE:3
+SALLE:4
+SALLE:5
+SALLE:6
+SALLE:7
+SALLE:8
+SALLE:9
+PIPE:0-1
+PIPE:0-9
+PIPE:1-0
+PIPE:1-2
+PIPE:1-3
+PIPE:1-4
+PIPE:1-7
+PIPE:1-9
+PIPE:2-1
+PIPE:3-1
+PIPE:3-5
+PIPE:3-9
+PIPE:4-1
+PIPE:4-5
+PIPE:5-3
+PIPE:5-4
+PIPE:5-6
+PIPE:5-7
+PIPE:5-8
+PIPE:6-5
+PIPE:7-1
+PIPE:7-5
+PIPE:7-8
+PIPE:7-9
+PIPE:8-5
+PIPE:8-7
+PIPE:8-9
+PIPE:9-0
+PIPE:9-1
+PIPE:9-3
+PIPE:9-7
+PIPE:9-8
+COORDINATE:0 7 65
+COORDINATE:1 95 92
+COORDINATE:2 85 46
+COORDINATE:3 12 1
+COORDINATE:4 42 85
+COORDINATE:5 1 16
+COORDINATE:6 76 72
+COORDINATE:7 4 53
+COORDINATE:8 5 60
+COORDINATE:9 47 19
+## Start of test suite
+$> ./lem_in < maps/multiple_intermediate_rooms
+# OK
+## Test suite OK
+
+## Start of test suite
+$> ./lem_in < maps/lemin_7-1.map
+# OK
+$> ./lem_in < maps/lemin_7-2.map
+KO (invalid map parsing)
+Expected:
+ANTS:30
+START:13
+END:12
+SALLE:0
+SALLE:1
+SALLE:10
+SALLE:11
+SALLE:12
+SALLE:13
+SALLE:14
+SALLE:2
+SALLE:3
+SALLE:4
+SALLE:5
+SALLE:6
+SALLE:7
+SALLE:8
+SALLE:9
+PIPE:0-0
+PIPE:0-1
+PIPE:0-10
+PIPE:0-11
+PIPE:0-12
+PIPE:0-13
+PIPE:0-14
+PIPE:0-2
+PIPE:0-3
+PIPE:0-4
+PIPE:0-5
+PIPE:0-6
+PIPE:0-7
+PIPE:0-8
+PIPE:0-9
+PIPE:1-0
+PIPE:1-1
+PIPE:1-10
+PIPE:1-11
+PIPE:1-12
+PIPE:1-13
+PIPE:1-14
+PIPE:1-2
+PIPE:1-3
+PIPE:1-4
+PIPE:1-5
+PIPE:1-6
+PIPE:1-7
+PIPE:1-8
+PIPE:1-9
+PIPE:10-0
+PIPE:10-1
+PIPE:10-10
+PIPE:10-12
+PIPE:10-13
+PIPE:10-14
+PIPE:10-2
+PIPE:10-3
+PIPE:10-4
+PIPE:10-5
+PIPE:10-6
+PIPE:10-8
+PIPE:10-9
+PIPE:11-0
+PIPE:11-1
+PIPE:11-11
+PIPE:11-12
+PIPE:11-13
+PIPE:11-2
+PIPE:11-4
+PIPE:11-6
+PIPE:11-7
+PIPE:11-8
+PIPE:11-9
+PIPE:12-0
+PIPE:12-1
+PIPE:12-10
+PIPE:12-11
+PIPE:12-12
+PIPE:12-13
+PIPE:12-2
+PIPE:12-3
+PIPE:12-4
+PIPE:12-5
+PIPE:12-6
+PIPE:12-7
+PIPE:12-8
+PIPE:12-9
+PIPE:13-0
+PIPE:13-1
+PIPE:13-10
+PIPE:13-11
+PIPE:13-12
+PIPE:13-13
+PIPE:13-14
+PIPE:13-3
+PIPE:13-4
+PIPE:13-5
+PIPE:13-6
+PIPE:13-7
+PIPE:13-8
+PIPE:13-9
+PIPE:14-0
+PIPE:14-1
+PIPE:14-10
+PIPE:14-13
+PIPE:14-14
+PIPE:14-3
+PIPE:14-4
+PIPE:14-5
+PIPE:14-6
+PIPE:14-7
+PIPE:14-8
+PIPE:14-9
+PIPE:2-0
+PIPE:2-1
+PIPE:2-10
+PIPE:2-11
+PIPE:2-12
+PIPE:2-2
+PIPE:2-3
+PIPE:2-5
+PIPE:2-7
+PIPE:2-8
+PIPE:2-9
+PIPE:3-0
+PIPE:3-1
+PIPE:3-10
+PIPE:3-12
+PIPE:3-13
+PIPE:3-14
+PIPE:3-2
+PIPE:3-3
+PIPE:3-4
+PIPE:3-5
+PIPE:3-6
+PIPE:3-7
+PIPE:3-8
+PIPE:4-0
+PIPE:4-1
+PIPE:4-10
+PIPE:4-11
+PIPE:4-12
+PIPE:4-13
+PIPE:4-14
+PIPE:4-3
+PIPE:4-4
+PIPE:4-7
+PIPE:4-8
+PIPE:4-9
+PIPE:5-0
+PIPE:5-1
+PIPE:5-10
+PIPE:5-12
+PIPE:5-13
+PIPE:5-14
+PIPE:5-2
+PIPE:5-3
+PIPE:5-5
+PIPE:5-6
+PIPE:5-7
+PIPE:5-8
+PIPE:6-0
+PIPE:6-1
+PIPE:6-10
+PIPE:6-11
+PIPE:6-12
+PIPE:6-13
+PIPE:6-14
+PIPE:6-3
+PIPE:6-5
+PIPE:6-6
+PIPE:6-7
+PIPE:6-8
+PIPE:6-9
+PIPE:7-0
+PIPE:7-1
+PIPE:7-11
+PIPE:7-12
+PIPE:7-13
+PIPE:7-14
+PIPE:7-2
+PIPE:7-3
+PIPE:7-4
+PIPE:7-5
+PIPE:7-6
+PIPE:7-7
+PIPE:7-8
+PIPE:7-9
+PIPE:8-0
+PIPE:8-1
+PIPE:8-10
+PIPE:8-11
+PIPE:8-12
+PIPE:8-13
+PIPE:8-14
+PIPE:8-2
+PIPE:8-3
+PIPE:8-4
+PIPE:8-5
+PIPE:8-6
+PIPE:8-7
+PIPE:8-8
+PIPE:8-9
+PIPE:9-0
+PIPE:9-1
+PIPE:9-10
+PIPE:9-11
+PIPE:9-12
+PIPE:9-13
+PIPE:9-14
+PIPE:9-2
+PIPE:9-4
+PIPE:9-6
+PIPE:9-7
+PIPE:9-8
+COORDINATE:0 3 114
+COORDINATE:1 78 143
+COORDINATE:10 99 4
+COORDINATE:11 37 149
+COORDINATE:12 81 18
+COORDINATE:13 144 59
+COORDINATE:14 111 29
+COORDINATE:2 68 123
+COORDINATE:3 119 95
+COORDINATE:4 60 57
+COORDINATE:5 6 70
+COORDINATE:6 51 52
+COORDINATE:7 55 78
+COORDINATE:8 100 53
+COORDINATE:9 10 68
+But got:
+ANTS:30
+START:13
+END:12
+SALLE:0
+SALLE:1
+SALLE:10
+SALLE:11
+SALLE:12
+SALLE:13
+SALLE:14
+SALLE:2
+SALLE:3
+SALLE:4
+SALLE:5
+SALLE:6
+SALLE:7
+SALLE:8
+SALLE:9
+PIPE:0-1
+PIPE:0-10
+PIPE:0-11
+PIPE:0-12
+PIPE:0-13
+PIPE:0-14
+PIPE:0-2
+PIPE:0-3
+PIPE:0-4
+PIPE:0-5
+PIPE:0-6
+PIPE:0-7
+PIPE:0-8
+PIPE:0-9
+PIPE:1-0
+PIPE:1-10
+PIPE:1-11
+PIPE:1-12
+PIPE:1-13
+PIPE:1-14
+PIPE:1-2
+PIPE:1-3
+PIPE:1-4
+PIPE:1-5
+PIPE:1-6
+PIPE:1-7
+PIPE:1-8
+PIPE:1-9
+PIPE:10-0
+PIPE:10-1
+PIPE:10-12
+PIPE:10-13
+PIPE:10-14
+PIPE:10-2
+PIPE:10-3
+PIPE:10-4
+PIPE:10-5
+PIPE:10-6
+PIPE:10-8
+PIPE:10-9
+PIPE:11-0
+PIPE:11-1
+PIPE:11-12
+PIPE:11-13
+PIPE:11-2
+PIPE:11-4
+PIPE:11-6
+PIPE:11-7
+PIPE:11-8
+PIPE:11-9
+PIPE:12-0
+PIPE:12-1
+PIPE:12-10
+PIPE:12-11
+PIPE:12-13
+PIPE:12-2
+PIPE:12-3
+PIPE:12-4
+PIPE:12-5
+PIPE:12-6
+PIPE:12-7
+PIPE:12-8
+PIPE:12-9
+PIPE:13-0
+PIPE:13-1
+PIPE:13-10
+PIPE:13-11
+PIPE:13-12
+PIPE:13-14
+PIPE:13-3
+PIPE:13-4
+PIPE:13-5
+PIPE:13-6
+PIPE:13-7
+PIPE:13-8
+PIPE:13-9
+PIPE:14-0
+PIPE:14-1
+PIPE:14-10
+PIPE:14-13
+PIPE:14-3
+PIPE:14-4
+PIPE:14-5
+PIPE:14-6
+PIPE:14-7
+PIPE:14-8
+PIPE:14-9
+PIPE:2-0
+PIPE:2-1
+PIPE:2-10
+PIPE:2-11
+PIPE:2-12
+PIPE:2-3
+PIPE:2-5
+PIPE:2-7
+PIPE:2-8
+PIPE:2-9
+PIPE:3-0
+PIPE:3-1
+PIPE:3-10
+PIPE:3-12
+PIPE:3-13
+PIPE:3-14
+PIPE:3-2
+PIPE:3-4
+PIPE:3-5
+PIPE:3-6
+PIPE:3-7
+PIPE:3-8
+PIPE:4-0
+PIPE:4-1
+PIPE:4-10
+PIPE:4-11
+PIPE:4-12
+PIPE:4-13
+PIPE:4-14
+PIPE:4-3
+PIPE:4-7
+PIPE:4-8
+PIPE:4-9
+PIPE:5-0
+PIPE:5-1
+PIPE:5-10
+PIPE:5-12
+PIPE:5-13
+PIPE:5-14
+PIPE:5-2
+PIPE:5-3
+PIPE:5-6
+PIPE:5-7
+PIPE:5-8
+PIPE:6-0
+PIPE:6-1
+PIPE:6-10
+PIPE:6-11
+PIPE:6-12
+PIPE:6-13
+PIPE:6-14
+PIPE:6-3
+PIPE:6-5
+PIPE:6-7
+PIPE:6-8
+PIPE:6-9
+PIPE:7-0
+PIPE:7-1
+PIPE:7-11
+PIPE:7-12
+PIPE:7-13
+PIPE:7-14
+PIPE:7-2
+PIPE:7-3
+PIPE:7-4
+PIPE:7-5
+PIPE:7-6
+PIPE:7-8
+PIPE:7-9
+PIPE:8-0
+PIPE:8-1
+PIPE:8-10
+PIPE:8-11
+PIPE:8-12
+PIPE:8-13
+PIPE:8-14
+PIPE:8-2
+PIPE:8-3
+PIPE:8-4
+PIPE:8-5
+PIPE:8-6
+PIPE:8-7
+PIPE:8-9
+PIPE:9-0
+PIPE:9-1
+PIPE:9-10
+PIPE:9-11
+PIPE:9-12
+PIPE:9-13
+PIPE:9-14
+PIPE:9-2
+PIPE:9-4
+PIPE:9-6
+PIPE:9-7
+PIPE:9-8
+COORDINATE:0 3 114
+COORDINATE:1 78 143
+COORDINATE:10 99 4
+COORDINATE:11 37 149
+COORDINATE:12 81 18
+COORDINATE:13 144 59
+COORDINATE:14 111 29
+COORDINATE:2 68 123
+COORDINATE:3 119 95
+COORDINATE:4 60 57
+COORDINATE:5 6 70
+COORDINATE:6 51 52
+COORDINATE:7 55 78
+COORDINATE:8 100 53
+COORDINATE:9 10 68
+## Start of test suite
+$> ./lem_in < maps/invalid_nb_ant
+# OK
+$> ./lem_in < maps/invalid_nb_ant_bis
+# OK
+$> ./lem_in < maps/invalid_nb_ant_bis_bis
+# OK
+## Test suite OK
+
+## Start of test suite
+$> ./lem_in < maps/no_room
+KO (invalid map parsing)
+# Expected (after pre-processing):
+ANTS:5
+START:
+END:
+# But got (after pre-processing):
+# Student output was:
+## Start of test suite
+$> ./lem_in < maps/no_start_room
+KO (program crashed)
+## Start of test suite
+$> ./lem_in < maps/no_end_room
+# OK
+## Test suite OK
+
+## Start of test suite
+$> ./lem_in < maps/double_start
+# OK
+## Test suite OK
+
+## Start of test suite
+$> ./lem_in < maps/double_end
+KO (program crashed)
+## Start of test suite
+$> ./lem_in < maps/duplicata_1
+# OK
+$> ./lem_in < maps/duplicata_2
+# OK
+$> ./lem_in < maps/duplicata_3
+# OK
+## Test suite OK
+
+## Start of test suite
+$> ./lem_in < maps/duplicata_4
+# OK
+$> ./lem_in < maps/duplicata_5
+# OK
+$> ./lem_in < maps/duplicata_6
+# OK
+## Test suite OK
+
+## Start of test suite
+$> ./lem_in < maps/no_pipe
+# OK
+## Test suite OK
+
+## Start of test suite
+$> ./lem_in < maps/pipe_imaginary_room
+KO (invalid map parsing)
+# Expected (after pre-processing):
+ANTS:10
+START:2
+END:6
+SALLE:0
+SALLE:1
+SALLE:2
+SALLE:3
+SALLE:4
+SALLE:5
+SALLE:6
+SALLE:7
+SALLE:8
+SALLE:9
+PIPE:0-4
+PIPE:1-1
+PIPE:1-5
+PIPE:2-2
+PIPE:2-6
+PIPE:2-9
+PIPE:4-0
+PIPE:5-1
+PIPE:6-2
+PIPE:6-6
+PIPE:6-7
+PIPE:7-6
+PIPE:9-2
+COORDINATE:0 31 35
+COORDINATE:1 69 70
+COORDINATE:2 46 20
+COORDINATE:3 61 86
+COORDINATE:4 20 5
+COORDINATE:5 45 95
+COORDINATE:6 64 12
+COORDINATE:7 53 36
+COORDINATE:8 72 60
+COORDINATE:9 18 61
+# But got (after pre-processing):
+# Student output was:
+## Start of test suite
+$> ./lem_in < maps/random_shit_1
+# OK
+$> ./lem_in < maps/random_shit_2
+KO (invalid map parsing)
+# Expected (after pre-processing):
+ANTS:10
+START:
+END:
+# But got (after pre-processing):
+# Student output was:
+## Start of test suite
+$> ./lem_in < maps/random_shit_5
+KO (invalid map parsing)
+Expected:
+ANTS:10
+START:2
+END:6
+SALLE:0
+SALLE:1
+SALLE:2
+SALLE:3
+SALLE:4
+SALLE:5
+SALLE:6
+SALLE:7
+SALLE:8
+SALLE:9
+PIPE:0-4
+PIPE:1-1
+PIPE:2-2
+PIPE:2-6
+PIPE:2-9
+PIPE:4-0
+PIPE:6-2
+PIPE:9-2
+COORDINATE:0 31 35
+COORDINATE:1 69 70
+COORDINATE:2 46 20
+COORDINATE:3 61 86
+COORDINATE:4 20 5
+COORDINATE:5 45 95
+COORDINATE:6 64 12
+COORDINATE:7 53 36
+COORDINATE:8 72 60
+COORDINATE:9 18 61
+But got:
+ANTS:10
+START:2
+END:6
+SALLE:0
+SALLE:1
+SALLE:2
+SALLE:3
+SALLE:4
+SALLE:5
+SALLE:6
+SALLE:7
+SALLE:8
+SALLE:9
+PIPE:0-4
+PIPE:2-6
+PIPE:2-9
+PIPE:4-0
+PIPE:6-2
+PIPE:9-2
+COORDINATE:0 31 35
+COORDINATE:1 69 70
+COORDINATE:2 46 20
+COORDINATE:3 61 86
+COORDINATE:4 20 5
+COORDINATE:5 45 95
+COORDINATE:6 64 12
+COORDINATE:7 53 36
+COORDINATE:8 72 60
+COORDINATE:9 18 61
+## Start of test suite
+$> ./lem_in < maps/no_way
+KO (invalid map parsing)
+# Expected (after pre-processing):
+ANTS:10
+START:4
+END:5
+SALLE:0
+SALLE:1
+SALLE:2
+SALLE:3
+SALLE:4
+SALLE:5
+SALLE:6
+SALLE:7
+SALLE:8
+SALLE:9
+PIPE:0-7
+PIPE:0-8
+PIPE:1-2
+PIPE:1-3
+PIPE:1-5
+PIPE:1-9
+PIPE:2-1
+PIPE:2-8
+PIPE:3-1
+PIPE:3-3
+PIPE:3-5
+PIPE:3-6
+PIPE:3-7
+PIPE:3-8
+PIPE:3-9
+PIPE:5-1
+PIPE:5-3
+PIPE:5-6
+PIPE:5-8
+PIPE:5-9
+PIPE:6-3
+PIPE:6-5
+PIPE:6-7
+PIPE:6-9
+PIPE:7-0
+PIPE:7-3
+PIPE:7-6
+PIPE:8-0
+PIPE:8-2
+PIPE:8-3
+PIPE:8-5
+PIPE:9-1
+PIPE:9-3
+PIPE:9-5
+PIPE:9-6
+COORDINATE:0 10 67
+COORDINATE:1 36 70
+COORDINATE:2 44 55
+COORDINATE:3 71 71
+COORDINATE:4 87 43
+COORDINATE:5 79 64
+COORDINATE:6 59 84
+COORDINATE:7 27 0
+COORDINATE:8 34 58
+COORDINATE:9 52 31
+# But got (after pre-processing):
+ANTS:10
+START:4
+END:5
+SALLE:0
+SALLE:1
+SALLE:2
+SALLE:3
+SALLE:4
+SALLE:5
+SALLE:6
+SALLE:7
+SALLE:8
+SALLE:9
+PIPE:0-7
+PIPE:0-8
+PIPE:1-2
+PIPE:1-3
+PIPE:1-5
+PIPE:1-9
+PIPE:2-1
+PIPE:2-8
+PIPE:3-1
+PIPE:3-5
+PIPE:3-6
+PIPE:3-7
+PIPE:3-8
+PIPE:3-9
+PIPE:5-1
+PIPE:5-3
+PIPE:5-6
+PIPE:5-8
+PIPE:5-9
+PIPE:6-3
+PIPE:6-5
+PIPE:6-7
+PIPE:6-9
+PIPE:7-0
+PIPE:7-3
+PIPE:7-6
+PIPE:8-0
+PIPE:8-2
+PIPE:8-3
+PIPE:8-5
+PIPE:9-1
+PIPE:9-3
+PIPE:9-5
+PIPE:9-6
+COORDINATE:0 10 67
+COORDINATE:1 36 70
+COORDINATE:2 44 55
+COORDINATE:3 71 71
+COORDINATE:4 87 43
+COORDINATE:5 79 64
+COORDINATE:6 59 84
+COORDINATE:7 27 0
+COORDINATE:8 34 58
+COORDINATE:9 52 31
+# Student output was:
+#number_of_ants
+10
+#rooms
+0 10 67
+1 36 70
+2 44 55
+3 71 71
+##start
+4 87 43
+##end
+5 79 64
+6 59 84
+7 27 0
+8 34 58
+9 52 31
+#tunnels
+0-7
+0-8
+1-3
+1-5
+2-1
+3-5
+3-6
+3-7
+3-9
+5-8
+5-9
+6-5
+6-9
+7-6
+8-2
+8-3
+9-1
+#moves
+
+
+=== BUILD LOG ===
+
+make: Entering directory '/usr/local/bugs/delivery'
+cc -I./include -g3   -c -o sources/graph.o sources/graph.c
+cc -I./include -g3   -c -o sources/input.o sources/input.c
+cc -I./include -g3   -c -o sources/linked_line_fct.o sources/linked_line_fct.c
+cc -I./include -g3   -c -o sources/my_boostlen.o sources/my_boostlen.c
+cc -I./include -g3   -c -o sources/my_lens.o sources/my_lens.c
+cc -I./include -g3   -c -o sources/my_memset.o sources/my_memset.c
+cc -I./include -g3   -c -o sources/my_put_nbr.o sources/my_put_nbr.c
+cc -I./include -g3   -c -o sources/my_split.o sources/my_split.c
+cc -I./include -g3   -c -o sources/my_strdup.o sources/my_strdup.c
+cc -I./include -g3   -c -o sources/my_strlen.o sources/my_strlen.c
+cc -I./include -g3   -c -o sources/parse_line.o sources/parse_line.c
+cc -I./include -g3   -c -o sources/parser.o sources/parser.c
+cc -I./include -g3   -c -o sources/path.o sources/path.c
+cc -I./include -g3   -c -o sources/repartition.o sources/repartition.c
+cc -I./include -g3   -c -o sources/verify_content.o sources/verify_content.c
+cc -I./include -g3   -c -o sources/verify_node.o sources/verify_node.c
+cc -I./include -g3   -c -o sources/solve/check_path.o sources/solve/check_path.c
+cc -I./include -g3   -c -o sources/solve/get_voisin.o sources/solve/get_voisin.c
+cc -I./include -g3   -c -o sources/solve/main_bfs.o sources/solve/main_bfs.c
+cc -I./include -g3   -c -o sources/solve/multisearch.o sources/solve/multisearch.c
+cc -I./include -g3   -c -o sources/solve/my_ups.o sources/solve/my_ups.c
+cc -I./include -g3   -c -o sources/solve/push_content.o sources/solve/push_content.c
+cc -I./include -g3   -c -o sources/solve/solve.o sources/solve/solve.c
+cc -I./include -g3   -c -o sources/solve/solve_tools.o sources/solve/solve_tools.c
+cc -I./include -g3   -c -o sources/tools/char_fct.o sources/tools/char_fct.c
+cc -I./include -g3   -c -o sources/tools/compare.o sources/tools/compare.c
+cc -I./include -g3   -c -o sources/tools/display.o sources/tools/display.c
+cc -I./include -g3   -c -o sources/tools/duplicate.o sources/tools/duplicate.c
+cc -I./include -g3   -c -o sources/tools/node_fct.o sources/tools/node_fct.c
+cc -I./include -g3   -c -o sources/tools/str_fct.o sources/tools/str_fct.c
+cc -I./include -g3   -c -o main.o main.c
+gcc -o lem_in sources/graph.o sources/input.o sources/linked_line_fct.o sources/my_boostlen.o sources/my_lens.o sources/my_memset.o sources/my_put_nbr.o sources/my_split.o sources/my_strdup.o sources/my_strlen.o sources/parse_line.o sources/parser.o sources/path.o sources/repartition.o sources/verify_content.o sources/verify_node.o sources/solve/check_path.o sources/solve/get_voisin.o sources/solve/main_bfs.o sources/solve/multisearch.o sources/solve/my_ups.o sources/solve/push_content.o sources/solve/solve.o sources/solve/solve_tools.o sources/tools/char_fct.o sources/tools/compare.o sources/tools/display.o sources/tools/duplicate.o sources/tools/node_fct.o sources/tools/str_fct.o main.o
+make clean
+make[1]: Entering directory '/usr/local/bugs/delivery'
+rm -f sources/graph.o sources/input.o sources/linked_line_fct.o sources/my_boostlen.o sources/my_lens.o sources/my_memset.o sources/my_put_nbr.o sources/my_split.o sources/my_strdup.o sources/my_strlen.o sources/parse_line.o sources/parser.o sources/path.o sources/repartition.o sources/verify_content.o sources/verify_node.o sources/solve/check_path.o sources/solve/get_voisin.o sources/solve/main_bfs.o sources/solve/multisearch.o sources/solve/my_ups.o sources/solve/push_content.o sources/solve/solve.o sources/solve/solve_tools.o sources/tools/char_fct.o sources/tools/compare.o sources/tools/display.o sources/tools/duplicate.o sources/tools/node_fct.o sources/tools/str_fct.o main.o
+make[1]: Leaving directory '/usr/local/bugs/delivery'
+make: Leaving directory '/usr/local/bugs/delivery'
+Build status: OK
+
+
+=== CODING STYLE ===
+
+F4 rule has been violated 10 times: too long function
+F3 rule has been violated 2 times: too long line
+L3 rule has been violated 6 times: misplaced space(s)
+
+
+------------------------------------------------------------------------------
+                           GCC Code Coverage Report
+Directory: .
+------------------------------------------------------------------------------
+File                                       Lines    Exec  Cover   Missing
+------------------------------------------------------------------------------
+------------------------------------------------------------------------------
+TOTAL                                          0       0    --%
+------------------------------------------------------------------------------
+lines: 0.0% (0 out of 0)
+functions: 0.0% (0 out of 0)
+branches: 0.0% (0 out of 0)
+
+
+=== BANNED FUNCTIONS ===
+
+Beware, a banned function was found in your project

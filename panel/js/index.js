@@ -29,6 +29,7 @@ function breadcrumb(user, ip, path) {
     let tot_path = ".";
     for (i in dirs) {
         let dir = dirs[i];
+        if (dir == "" || dir == ".") continue;
         let thpath = "", thcolor = "text-gray-400";
         if (i < dirs.length - 1) {
             thpath = "path=\"" + tot_path + "/" + dir + "\"";
