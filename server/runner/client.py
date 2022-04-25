@@ -1,5 +1,5 @@
 import sys
-import requests
+from urllib import request, parse
 import http.server
 import os
 import platform
@@ -25,7 +25,9 @@ class CobraServer:
         self.url = ip
         self.port = port
     def post_to(self, endpoint, data):
-        return requests.post("http://%s:%s/%s.php" % (self.url, self.port, endpoint), data = data)
+        data = parse.urlencode(data).encode()
+        req =  request.Request("http://%s:%s/%s.php" % (self.url, self.port, endpoint), data=data)
+        return request.urlopen(req)
 
 def ping(server, ip, data = {}):
     return {"status": True}
@@ -35,6 +37,7 @@ def ls(server, ip, data = {}):
         return {"status": True, "body": "[]"}
     if ".." in data["dir"]:
         return {"status": True, "body": "[]"}
+    data["dir"] = os.path.join(".", data["dir"])
     if not os.path.isdir(data["dir"]):
         return {"status": True, "body": "[]"}
     files = []
@@ -47,7 +50,8 @@ def cat(server, ip, data = {}):
     if "dir" not in data:
         return {"status": True, "body": ""}
     if ".." in data["dir"]:
-        return {"status": True, "body": ""}
+        return {"status": True, "body": "[]"}
+    data["dir"] = os.path.join(".", data["dir"])
     if not os.path.isfile(data["dir"]):
         return {"status": True, "body": ""}
     if is_binary(data["dir"]):
@@ -81,6 +85,10 @@ class Handler( http.server.CGIHTTPRequestHandler ):
         pass
     def do_POST(self):
         ip = self.address_string()
+        if ip not in [admin_ip, "127.0.0.1", "::1"]:
+            self.send_response(400)
+            self.end_headers()
+            return
         endpoint = self.path.split("/")[-1]
         if (self.headers['Content-Length']):
             content_length = int(self.headers['Content-Length'])
@@ -104,6 +112,7 @@ class Handler( http.server.CGIHTTPRequestHandler ):
         else:
             self.send_response(404)
         self.end_headers()
+
 if len(sys.argv) != 2:
     print("Usage: %s <ip>" % sys.argv[0])
     exit(1)
@@ -112,13 +121,12 @@ if not sys.argv[1].count(".") != 4:
     print("Invalid IP")
     exit(1)
 
-server = CobraServer(sys.argv[1])
+admin_ip = sys.argv[1]
+
+server = CobraServer(admin_ip)
 if (server.post_to("connect", {"name": os.getlogin(), "port": "8887", "os": platform.system()})):
     print("\033[92mConnected !\033[0m")
 
 server_address = ("", 8887)
 httpd = http.server.HTTPServer(server_address, Handler)
 httpd.serve_forever()
-
-
-

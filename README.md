@@ -45,3 +45,13 @@ Le panel, lui, envoie des requêtes authentifiées au serveur principal. Le serv
 ![](https://cdn.discordapp.com/attachments/843925825317634088/967544558747549696/unknown.png)
 
 Une fois le Coding Club terminé, le participant pourra simplement supprimer le script client de son ordinateur, celui-ci ne laissera aucune trace de son passage sur la machine.
+
+## Troubleshooting
+
+Si le client affiche "Connecté" mais ne s'affiche pas sur le panel
+
+Ajouter le port au firewall :
+
+```bash
+firewall-cmd --zone=public --add-port=8887/tcp
+```

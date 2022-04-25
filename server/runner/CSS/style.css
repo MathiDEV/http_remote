@@ -1,0 +1,58 @@
+
+#content div{
+    display: inline-block;
+    justify-content: center;
+    width: 49%;
+    vertical-align: top;
+}
+
+#content div.annonce{
+    background-color: rgb(25, 25, 25);
+    width: 100%;
+    color: rgb(200, 200, 200);
+}
+
+div#content div.leftbox{
+    /* text-align: center; */
+}
+
+div#content div.rightbox{
+    /* text-align: center; */
+}
+
+div.annonce img{
+    border-radius: 50px;
+}
+
+body{
+    background-color: whitesmoke;
+}
+
+header{
+    background-color: rgb(50, 50, 50);
+    color: whitesmoke;
+}
+
+header img{
+    border-radius: 50%;
+    padding: 10px;
+    margin-bottom: 0px;
+}
+
+nav.menu ul li.btn{
+    list-style-type: none;
+    display: inline-block;
+}
+
+nav.menu ul li.btn a{
+    color: wheat;
+    text-decoration: none;
+    background-color: rgb(50, 50, 50);
+    padding: 15px;
+    font-size: 20px;
+}
+
+nav.menu ul li.btn:hover a{
+    background-color: rgb(75, 75, 75);
+    transition: 0.3s all;
+}

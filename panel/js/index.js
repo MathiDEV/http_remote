@@ -25,7 +25,7 @@ function breadcrumb(user, ip, path) {
         </span>
         </div>
     </li>`);
-    let dirs = path.split("/").slice(1)
+    let dirs = path.split("/")
     let tot_path = ".";
     for (i in dirs) {
         let dir = dirs[i];
@@ -83,7 +83,7 @@ $.post("http://localhost:8888/get_users.php", { admin: admin }).done(function (u
             icon = "img/linux.png";
         }
 
-        let user_elem = $(`<li user="${ip}" class="flex justify-between items-center bg-white mt-2 p-2 rounded cursor-pointer transition"><div class="flex ml-2"><img src="${icon}" width="40" height="40" class="rounded-full"><div class="flex flex-col ml-2"><span class="font-medium text-black">${users[ip].name}</span><span class="text-sm text-gray-400">${ip}<span class="bg-gray-200 text-gray-800 text-sm font-medium mr-2 px-1 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800 ml-1">${users[ip].port}</span></span></div></div><div class="flex flex-col items-center"><span class="text-gray-500 hover:underline"><a href="http://localhost:8888/trace?userip=${ip}" target="_blank">Trace</a></span><i class="fa fa-star text-green-400"></i></div></li>`)
+        let user_elem = $(`<li user="${ip}" class="flex justify-between items-center bg-white mt-2 p-2 rounded cursor-pointer transition w-96"><div class="flex ml-2"><img src="${icon}" width="40" height="40" class="rounded-full"><div class="flex flex-col ml-2"><span class="font-medium text-black">${users[ip].name}</span><span class="text-sm text-gray-400">${ip}<span class="bg-gray-200 text-gray-800 text-sm font-medium mr-2 px-1 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800 ml-1">${users[ip].port}</span></span></div></div><div class="flex flex-col items-center"><span class="text-gray-500 hover:underline"><a href="http://localhost:8888/trace?userip=${ip}" target="_blank">Trace</a></span><i class="fa fa-star text-green-400"></i></div></li>`)
         $("#user_list").append(user_elem)
     }
     $("#user_list li[user]").click(function (e) {

