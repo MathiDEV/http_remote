@@ -17,9 +17,7 @@ foreach ($connections as $ip=>$connection) {
     curl_setopt($ch, CURLOPT_TIMEOUT, 3);
     $server_output = curl_exec($ch);
     curl_close($ch);
-    if ($server_output != "200") {
-        unset($connections[$ip]);
-    }
+    $connections[$ip]["active"] = $server_output == "200";
 }
 file_put_contents("connected.json", json_encode($connections));
 echo json_encode($connections);

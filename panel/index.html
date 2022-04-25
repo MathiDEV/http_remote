@@ -23,14 +23,23 @@
             width: 100%;
             overflow: hidden;
         }
+
+        pre::-webkit-scrollbar {
+            display: none;
+        }
+
+        pre {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
     </style>
 </head>
 
 <body class="p-5 bg-gray-100">
     <div>
         <img class="inline-block mr-2 align-middle" height=50 width=50 src="img/cobra.webp">
-    <h1 class="text-3xl inline-block align-middle">Cobra Admin Panel</h1>
-</div>
+        <h1 class="text-3xl inline-block align-middle">Cobra Admin Panel</h1>
+    </div>
     <div class="py-10 px-2">
         <div class="max-w-4xl w-fit mx-auto overflow-hidden">
             <div class="w-full p-4">
