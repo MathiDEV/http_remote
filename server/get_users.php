@@ -14,7 +14,7 @@ foreach ($connections as $ip=>$connection) {
     curl_setopt($ch, CURLOPT_URL, "http://$ip:$port/ping");
     curl_setopt($ch, CURLOPT_POST, 1);
     curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 0);
-    curl_setopt($ch, CURLOPT_TIMEOUT, 3);
+    curl_setopt($ch, CURLOPT_TIMEOUT, ($connections[$ip]["active"] ? 3 : 1));
     $server_output = curl_exec($ch);
     curl_close($ch);
     $connections[$ip]["active"] = $server_output == "200";

@@ -18,15 +18,24 @@ if (!isset($connections[$_POST["ip"]])) {
     http_response_code(400);
     die("Error: Connection not found");
 }
-ob_start();
+
+$allowed_exts = file_get_contents("mouli/.allowed");
+$allowed_exts = explode("\n", $allowed_exts);
 $ip = $_POST["ip"];
 $port = $connections[$_POST["ip"]]["port"];
 $ch = curl_init();
 curl_setopt($ch, CURLOPT_URL, "http://$ip:$port/getfiles");
 curl_setopt($ch, CURLOPT_POST, 1);
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+curl_setopt($ch, CURLOPT_POSTFIELDS, "filetypes=".implode(",", $allowed_exts));
 $server_output = curl_exec($ch);
+$status = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+if ($status != 200) {
+    http_response_code(400);
+    die("Error: Connection not found");
+}
 curl_close($ch);
+$server_output = str_replace("\\", "/" , $server_output);
 $response = json_decode($server_output, true);
 
 // clear runner directory
@@ -37,14 +46,11 @@ if (is_dir($runner)) {
 }
 mkdir($runner);
 chmod($runner, 0777);
-
-$allowed_exts = file_get_contents("mouli/.allowed");
-$allowed_exts = explode("\n", $allowed_exts);
 foreach ($response as $path => $content) {
     $dirs = explode("/", $path);
     $filename = array_pop($dirs);
     $ext = pathinfo($filename, PATHINFO_EXTENSION);
-    if (in_array($ext, $allowed_exts) || $path == "") {
+    if (!in_array($ext, $allowed_exts) || $path == "") {
         continue;
     }
     $dir_path = $runner;
@@ -59,6 +65,7 @@ foreach ($response as $path => $content) {
     fwrite($file, $content);
     fclose($file);
 }
+
 exec("cp -r mouli/* $runner");
 chmod("$runner/mouli", 0777);
 $id = str_replace(".", "_", $ip);

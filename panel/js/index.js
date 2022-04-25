@@ -84,12 +84,12 @@ $.post("http://localhost:8888/get_users.php", { admin: admin }).done(function (u
             icon = "img/linux.png";
         }
 
-        let active_class = (users[ip].active ? "cursor-pointer" : "opacity-50");
+        let active_class = (users[ip].active ? "" : "opacity-50");
 
-        let user_elem = $(`<li user="${ip}" class="flex justify-between items-center bg-white mt-2 p-2 rounded transition w-96 ${active_class}"><div class="flex ml-2"><img src="${icon}" width="40" height="40" class="rounded-full"><div class="flex flex-col ml-2"><span class="font-medium text-black">${users[ip].name}</span><span class="text-sm text-gray-400">${ip}<span class="bg-gray-200 text-gray-800 text-sm font-medium mr-2 px-1 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800 ml-1">${users[ip].port}</span></span></div></div><div class="flex flex-col items-center"><span class="text-gray-500 hover:underline"><a href="http://localhost:8888/trace?userip=${ip}" target="_blank">Trace</a></span><i class="fa fa-star text-green-400"></i></div></li>`)
+        let user_elem = $(`<li ${(users[ip].active ? "" : "disabled")} user="${ip}" class="flex justify-between items-center bg-white mt-2 p-2 rounded transition w-96 ${(users[ip].active ? "cursor-pointer" : "")}"><div class="flex ml-2"><img original_src="${icon}" src="${icon}" width="40" height="40" class="rounded-full ${active_class}"><div class="flex flex-col ml-2"><span class="font-medium text-black ${active_class}">${users[ip].name}</span><span class="text-sm text-gray-400 ${active_class}">${ip}<span class="bg-gray-200 text-gray-800 text-sm font-medium mr-2 px-1 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800 ml-1">${users[ip].port}</span></span></div></div><div class="flex flex-col items-center"><span class="text-gray-500 hover:underline"><a href="http://localhost:8888/trace?userip=${ip}" target="_blank">Trace</a></span><i class="fa fa-star text-green-400"></i></div></li>`)
         $("#user_list").append(user_elem)
     }
-    $("#user_list li[user]:not(.opacity-50)").click(function (e) {
+    $("#user_list li[user]:not([disabled])").click(function (e) {
         if ($(e.target).is('a'))
             return
         $("#userfiles").fadeIn(200)
@@ -98,13 +98,28 @@ $.post("http://localhost:8888/get_users.php", { admin: admin }).done(function (u
             $(this).attr("disabled", "disabled").addClass(["cursor-not-allowed", "opacity-50"]);
             $.post("http://localhost:8888/mouli.php", { admin: admin, ip: ip }).done(function (res) {
                 $.notify({ title: res }, { style: "metro", className: "success" })
-                $("#userfiles button").attr("disabled", false).removeClass(["cursor-not-allowed", "opacity-50"]);
             }).fail(function (xhr) {
                 data = xhr.responseText.split("\n")[0]
                 $.notify({ title: data }, { style: "metro" })
+            }).always(function () {
+                $("#userfiles button").attr("disabled", false).removeClass(["cursor-not-allowed", "opacity-50"]);
             })
         });
         show_files(users[ip].name, ip, ".")
+    })
+    $("#user_list li[user][disabled] img").each(function () {
+        $(this).css("cursor", "pointer")
+        $(this).mouseenter(function (e) {
+            $(this).attr("src", "img/remove.png").removeClass("opacity-50")
+        }).mouseleave(function () {
+            $(this).attr("src", $(this).attr("original_src")).addClass("opacity-50")
+        })
+        $(this).click(function (e) {
+            let elem = $(this)
+            $.post("http://localhost:8888/remove_connection.php", { admin: admin, ip: $(this).parent().parent().attr("user")}).done(function (res) {
+                elem.parent().parent().remove()
+            })
+        })
     })
 }).fail(function (xhr) {
     data = xhr.responseText.split("\n")[0]

@@ -43,7 +43,8 @@ def ls(server, ip, data = {}):
     files = []
     for file in os.listdir(data["dir"]):
         filepath = file.replace("\\", "/")
-        files.append({"name": file, "type": "file" if os.path.isfile(os.path.join(data["dir"], file)) else "dir", "path": data["dir"] + "/" + filepath, "size": os.path.getsize(os.path.join(data["dir"], file))})
+        filetype = "file" if os.path.isfile(os.path.join(data["dir"], file)) else "dir"
+        files.append({"name": file, "type": filetype, "path": data["dir"] + "/" + filepath, "size": os.path.getsize(os.path.join(data["dir"], file))})
     return {"status": True, "body": json.dumps(files)}
 
 def cat(server, ip, data = {}):
@@ -61,17 +62,22 @@ def cat(server, ip, data = {}):
 
 def getfiles(server, ip, data = {}):
     all_files = {}
+    check_file_types = False
+    if "filetypes" in data:
+        filetypes = data["filetypes"].split(",")
+        check_file_types = True
     for subdir, _, files in os.walk("."):
         for file in files:
             file = os.path.join(subdir, file)
             if os.path.isfile(file):
+                if check_file_types and os.path.splitext(file)[1][1:] not in filetypes:
+                    continue
                 with open(file, "rb") as f:
                     data = f.read()
                 file = file.replace("\\", "/")
                 file = "/".join(file.split("/")[1:])
                 all_files[file] = base64.b64encode(data).decode("utf-8")
     return {"status": True, "body": json.dumps(all_files)}
-
 
 endpoints = {
     "ping": ping,
