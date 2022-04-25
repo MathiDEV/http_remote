@@ -1,0 +1,98 @@
+[94m=============== Test on my_name===============[0m
+[92m[Basic] => PASSED[0m
+
+[94m=============== Test on digits===============[0m
+[92m[Basic] => PASSED[0m
+
+[94m=============== Test on revalpha===============[0m
+[92m[Basic] => PASSED[0m
+
+[94m=============== Test on alandroit===============[0m
+[92m[Basic] => PASSED[0m
+[92m[One letter] => PASSED[0m
+[92m[Big string] => PASSED[0m
+
+[94m=============== Test on alanver===============[0m
+[92m[Basic] => PASSED[0m
+[92m[One letter] => PASSED[0m
+[92m[BIG string] => PASSED[0m
+[92m[Test on palindrome] => PASSED[0m
+
+[94m=============== Test on countoc===============[0m
+[92m[Basic] => PASSED[0m
+[92m[Advanced] => PASSED[0m
+[92m[Count everything] => PASSED[0m
+[92m[Nothing to count] => PASSED[0m
+[92m[Only one in a sea of bullshit] => PASSED[0m
+
+[94m=============== Test on repeat_alpha===============[0m
+[92m[Basic] => PASSED[0m
+[92m[All alphabet] => PASSED[0m
+[92m[Numbers and specials] => PASSED[0m
+[92m
+[Empty] => PASSED[0m
+[92m[Tricky test] => PASSED[0m
+
+[94m=============== Test on hidentf===============[0m
+[92m[Alphabet expect 1] => PASSED[0m
+[92m[Random expect 1] => PASSED[0m
+[92m[Wrong alphabet expect 0] => PASSED[0m
+
+[94m=============== Test on rot_42===============[0m
+[92m[All alphabet] => PASSED[0m
+[92m[Numbers and specials] => PASSED[0m
+[92m[Hard test] => PASSED[0m
+[92m
+[Empty] => PASSED[0m
+[92m[Nothing to rotate] => PASSED[0m
+[92m[All and tricky] => PASSED[0m
+
+[94m=============== Test on last_word===============[0m
+[92m[Simple] => PASSED[0m
+[92m[Only one word] => PASSED[0m
+[92m[Lots of words] => PASSED[0m
+[92m[Tabs and spaces stress test] => PASSED[0m
+[92m[Tabs and spaces stress test at the end too] => PASSED[0m
+[92m[Empty] => PASSED[0m
+
+[94m=============== Test on r_capitalize===============[0m
+[92m[ORDER 0 | Basic] => PASSED[0m
+[92m[ORDER 0 | One word] => PASSED[0m
+[92m[ORDER 0 | FULL CAPS] => PASSED[0m
+[92m[ORDER 0 | Big sentence and numbers] => PASSED[0m
+[92m[ORDER 0 | Empty] => PASSED[0m
+[92m
+[ORDER 1 | Basic] => PASSED[0m
+[92m[ORDER 1 | One word] => PASSED[0m
+[92m[ORDER 1 | FULL CAPS] => PASSED[0m
+[92m[ORDER 1 | Big sentence and numbers] => PASSED[0m
+[92m[ORDER 1 | Empty] => PASSED[0m
+[92m
+[Error handling wrong order] => PASSED[0m
+
+[94m=============== Test on pgcd===============[0m
+[92m[Subject test] => PASSED[0m
+[92m[Same numbers] => PASSED[0m
+[92m[Medium numbers] => PASSED[0m
+[92m[Huge numbers] => PASSED[0m
+[92m[Division by zero] => PASSED[0m
+[92m[Negative numbers] => PASSED[0m
+
+[94m=============== Test on fprime===============[0m
+[92m[Subject test] => PASSED[0m
+[92m
+[Small number] => PASSED[0m
+[92m[Small number 2] => PASSED[0m
+[92m
+[Big number] => PASSED[0m
+[92m[Big number 2] => PASSED[0m
+[92m
+[Huge number] => PASSED[0m
+[92m[Huge number 2] => PASSED[0m
+[92m
+[Tricky 1] => PASSED[0m
+[92m[Tricky 2] => PASSED[0m
+[92m
+[Zero] => PASSED[0m
+[92m[Negative value] => PASSED[0m
+
