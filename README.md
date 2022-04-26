@@ -48,10 +48,12 @@ Une fois le Coding Club terminé, le participant pourra simplement supprimer le 
 
 ## Troubleshooting
 
-Si le client affiche "Connecté" mais ne s'affiche pas sur le panel
+- Si le client affiche "Connecté" mais ne s'affiche pas sur le panel
 
 Ajouter le port au firewall :
 
 ```bash
 firewall-cmd --zone=public --add-port=8887/tcp
 ```
+
+- Si il est impossible d'utiliser le port sur Windows et qu'aucune fenêtre de parefeu ne s'ouvre, executez le CMD en tant qu'Administrateur et réesayez.
