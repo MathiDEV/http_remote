@@ -56,4 +56,4 @@ Ajouter le port au firewall :
 firewall-cmd --zone=public --add-port=8887/tcp
 ```
 
-- Si il est impossible d'utiliser le port sur Windows et qu'aucune fenêtre de parefeu ne s'ouvre, executez le CMD en tant qu'Administrateur et réesayez.
+- Si il est impossible d'utiliser le port sur Windows et qu'aucune fenêtre de parefeu ne s'ouvre, executez le CMD en tant qu'Administrateur et réessayez.
