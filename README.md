@@ -46,6 +46,66 @@ Le panel, lui, envoie des requêtes authentifiées au serveur principal. Le serv
 
 Une fois le Coding Club terminé, le participant pourra simplement supprimer le script client de son ordinateur, celui-ci ne laissera aucune trace de son passage sur la machine.
 
+## Installation
+
+### Serveur
+
+Pour commencer, il convient de séléctionner un poste de travail qui servira de serveur. Ce poste doit être en capacité d'exposer son port 8888 au réseau local et être connecté au même réseau que tous les poste clients.
+
+#### Requirements
+
+Le serveur doit posséder le CLI php8.1 et le nécessaire pour executer les moulinettes (Python3 et ses librairies généralement).
+
+Il est fortement recommandé d'utiliser une distribution Linux sur le poste serveur, de préférence basée sur Debian/Ubuntu.
+
+#### Démarrage
+
+La commande ci-dessous permet de démarrer le serveur:
+
+```bash
+./start_server.sh
+```
+
+Votre console indiquera:
+
+```
+Served on <ip>:8888
+```
+
+Il important de retenir l'IP indiquée, il s'agit de l'addresse locale du poste serveur. Il sera nécessaire de la renseigner lors de l'installation client.
+
+### Client
+
+Il faudra transférer le fichier `client.py` (uniquement ce fichier), aux différents postes clients. Ce script est compatible avec tous les systèmes d'exploitations et ne nécessite aucune dépendance Python.
+
+#### Requirements
+
+Le poste client doit posséder Python3.8 ou supérieur.
+
+Le poste doit être en mesure d'exposer son port 8887 (voit la section [Troubleshooting](#troubleshooting) en cas de problème).
+
+#### Démarrage
+
+Pour démarrer le script client, il convient d'ouvrir un terminal dans le dossier de travail du participant et d'executer la commande suivante :
+
+```bash
+python3 client.py <ip>
+```
+
+L'IP à renseigner étant celle indiquée précedemment par le serveur (sans le port).
+
+## Utilisation
+
+### Serveur
+
+Le PC serveur (et uniquement lui) pourra accéder à une interface graphique en chargeant le fichier `panel/index.html` dans son navigateur (directement en double-cliquant dessus, sans le servir sur un port).
+
+Depuis cette interface, l'administrateur pourra consulter le travail des participants en temps réel, lancer une moulinette et consulter le resultat des tests.
+
+### Client
+
+Les differents PC clients pourront accéder à l'URL `http://<ip>:8888/trace` pour consulter les resultats de leur dernière moulinette (L'IP à renseigner étant celle indiquée précedemment par le serveur)
+
 ## Troubleshooting
 
 - Si le client affiche "Connecté" mais ne s'affiche pas sur le panel
