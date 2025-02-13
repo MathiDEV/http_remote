@@ -42,7 +42,7 @@ Les scripts clients vont en suite lancer un serveur HTTP sur la machine du parti
 
 Le panel, lui, envoie des requêtes authentifiées au serveur principal. Le serveur questionnera à son tour le client ciblé et retournera les informations demandées...
 
-![](https://cdn.discordapp.com/attachments/843925825317634088/967544558747549696/unknown.png)
+![](./assets/panel.png)
 
 Une fois le Coding Club terminé, le participant pourra simplement supprimer le script client de son ordinateur, celui-ci ne laissera aucune trace de son passage sur la machine.
 
